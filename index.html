@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XKCD Comics</title>
+  </head>
+
+  <body>
+    <h1 class="title">XKCD Comics</h1>
+    <div id="app">
+      <div v-if="loading" id="loading"><p>Loading...</p></div>
+      <div v-else class="comicContainer">
+        <div class="buttonContainer">
+          <button @click="firstComic">First</button>
+          <button @click="previousComic">Previous</button>
+          <button @click="nextComic">Next</button>
+          <button @click="lastComic">Last</button>
+          <button @click="randomComic">Random</button>
+        </div>
+
+        <h2>{{ current.safe_title }}</h2>
+
+        <star-rating @rating-selected="setRating"></star-rating>
+        <br />
+
+        <div id="wrapperCommentsContent">
+          <div id="comicContentsContainer">
+            <img v-bind:src="current.img" v-bind:alt="current.alt" />
+
+            <p>
+              <i
+                >#{{ current.num }}, drawn on {{ current.day }} {{ month }} {{
+                current.year }}</i
+              >
+            </p>
+          </div>
+
+          <div id="commentContainer">
+            <h3>Add a Comment</h3>
+
+            <form @submit.prevent="addComment" class="commentForm">
+              <textarea v-model="addedComment"></textarea> <br />
+              <div id="commentFormSubmit">
+                <input v-model="addedName" placeholder="Name" />
+                <button type="submit">Comment</button>
+              </div>
+            </form>
+
+            <div id="commentInfoContainer">
+              <h3>Comments</h3>
+              <div v-for="comment in comments[number]" id="commentInfo">
+                <hr />
+                <p>{{ comment.text }}</p>
+                <p><i>-- {{ comment.author }}</i></p>
+                <p><i> {{ comment.time }} </i></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="moment.js"></script>
+    <script src="https://unpkg.com/vue-star-rating/dist/star-rating.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>

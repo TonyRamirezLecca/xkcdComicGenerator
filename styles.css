@@ -1,0 +1,146 @@
+* {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #2e6269;
+}
+
+#loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  font-size: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin-top: 20px;
+  color: white;
+  text-shadow: 2px 2px 3px black;
+}
+
+.buttonContainer {
+  margin: 10px;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  font-size: 1em;
+  border: none;
+  color: white;
+  background: #353535;
+  box-shadow: 2px 3px 3px #202020;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+  display: flex;
+  flex-dirction: column;
+  cursor: pointer;
+}
+button:hover {
+  background: #202020;
+  box-shadow: inset 2px 2px 1px black;
+}
+
+.comicContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.comicContainer h2 {
+  margin: 20px;
+  color: white;
+  text-shadow: 2px 2px 3px black;
+}
+#wrapperCommentsContent {
+  width: 100%;
+}
+#comicContentsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#comicContentsContainer img {
+  margin: 10px;
+  max-width: 100%;
+}
+#comicContentsContainer p {
+  margin: 5px;
+}
+
+#commentContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#commentContainer h3 {
+  margin-top: 20px;
+  color: white;
+  text-shadow: 2px 2px 3px #202020;
+  margin-bottom: 5px;
+}
+.commentForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.commentForm textarea {
+  margin: 10px;
+  padding: 5px;
+  min-width: 300px;
+}
+#commentFormSubmit {
+  display: flex;
+}
+#commentFormSubmit input,
+button {
+  margin: 10px;
+  padding: 5px;
+}
+#commentInfoContainer {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+#commentInfo {
+  max-width: 800px;
+  width: 100%;
+  padding: 10px;
+  margin: 2px;
+  background: rgb(211, 211, 211, 0.3);
+}
+.footer {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer a {
+  text-decoration: none;
+  color: black;
+}
