@@ -52,7 +52,7 @@ let app = new Vue({
     xkcd() {
       this.loading = true;
       axios
-        .get("https://xkcd.now.sh/" + this.number)
+        .get("https://xkcd.now.sh/?comic=" + this.number)
         .then(response => {
           this.current = response.data;
           this.number = response.data.num;
