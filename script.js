@@ -4,7 +4,7 @@ let app = new Vue({
   el: "#app",
   data: {
     number: "",
-    max: "",
+    max: "2362",
     current: {
       title: "",
       img: "",
