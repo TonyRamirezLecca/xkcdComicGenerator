@@ -65,12 +65,20 @@ let app = new Vue({
         });
     },
     previousComic() {
-      this.number = this.current.num - 1;
-      if (this.number < 1) this.number = 1;
+      if (this.number <= 1) {
+        this.number = 1;
+      }
+      else {
+        this.number = this.current.num - 1;
+      }
     },
     nextComic() {
-      this.number = this.current.num + 1;
-      if (this.number > this.max) this.number = this.max;
+      if (this.number >= this.max) {
+        this.number = this.max;
+      }
+      else {
+        this.number = this.current.num + 1;
+      }
     },
     getRandom(min, max) {
       min = Math.ceil(min);
