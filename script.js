@@ -3,7 +3,7 @@ Vue.component("star-rating", VueStarRating.default);
 let app = new Vue({
   el: "#app",
   data: {
-    number: "",
+    number: "1",
     max: "2362",
     current: {
       title: "",
